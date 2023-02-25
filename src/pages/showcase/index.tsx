@@ -6,13 +6,32 @@ const Showcase = () => {
   const [companies, setCompanies] = useState<GetCompaniesPayload[]>([]);
   const [current_company_index, setccI] = useState(0);
   const [c, setc] = useState(false);
+
   useEffect(() => {
     get_companies("price").then((e) => {
       setCompanies(e.data.payload);
     });
   }, []);
   return (
-    <div className="pt-32  ">
+    <div className="pt-32">
+      <div>
+        <label htmlFor="sortBy"></label>
+        <select
+          name="sortBy"
+          id="sortBy"
+          defaultValue={"price"}
+          onChange={(e) => {
+            get_companies(e.target.value as "price" | "users").then((e) => {
+              setCompanies(e.data.payload);
+            });
+          }}
+        >
+          <option value="price">Price</option>
+          <option value="users">Users</option>
+          <option value="current_year_profit">Current Year Profit</option>
+        </select>
+      </div>
+
       {c && (
         <Model
           onClose={() => setc(false)}
