@@ -1,4 +1,5 @@
 import { GetCompaniesPayload } from "@/api/get-companies";
+import dynamic from "next/dynamic";
 import { isPropertySignature } from "typescript";
 
 type Props = {
@@ -92,4 +93,7 @@ const Model = (prop: Props) => {
     </>
   );
 };
-export default Model;
+
+export default dynamic(() => Promise.resolve(Model), {
+  ssr: false,
+});
