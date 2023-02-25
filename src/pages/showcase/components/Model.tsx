@@ -15,11 +15,11 @@ const Model = (prop: Props) => {
 
       <div className="h-full w-full fixed overflow-scroll pb-36">
         <div className="mx-auto w-2/5 my-5 bg-gray-900 px-8 py-5 rounded-lg mt-28">
-          <Image
+          <img
             className="mx-auto rounded-xl my-20"
             src={p.profileUrl}
             alt="image"
-          ></Image>
+          ></img>
           <h1 className="text-3xl mb-8 font-semibold">Company Details</h1>
           {/* <form onSubmit={handleSubmit(onSubmit)}> */}
           <p className="text-xl mb-2 w-full ">Company Name</p>
