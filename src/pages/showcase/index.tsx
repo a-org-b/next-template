@@ -13,7 +13,9 @@ const Showcase = () => {
   const [current_company_index, setccI] = useState(0);
   const [c, setc] = useState(false);
   useEffect(() => {
-    get_companies("price").then((e) => setCompanies(e.data.payload));
+    get_companies("price").then((e) => {
+      setCompanies(e.data.payload);
+    });
   }, []);
   return (
     <div className="pt-32 ">
