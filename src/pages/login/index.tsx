@@ -29,12 +29,14 @@ function Login() {
       password: lpass,
     });
 
-    const res = await auth(data.session?.access_token ?? "");
-    localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
-    if (error) console.log(error);
-    if (error != null) {
+    if (error) {
+      console.log(error);
       router.push("/login");
       alert("Password was wrong");
+    } else {
+      router.push("/showcase");
+      const res = await auth(data.session?.access_token ?? "");
+      localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
     }
   }
 
@@ -81,17 +83,15 @@ function Login() {
               <p className={e + " absolute right-0"}>Forgot Password</p>
             </div>
 
-            <Link href={tof ? "/showcase" : "/login"}>
-              <button
-                onClick={signin}
-                className={
-                  " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
-                  d
-                }
-              >
-                Login
-              </button>
-            </Link>
+            <button
+              onClick={signin}
+              className={
+                " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
+                d
+              }
+            >
+              Login
+            </button>
             {/* <div className="flex justify-center mt-5 ">
               <img
                 src="/image/google.png"

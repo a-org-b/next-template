@@ -1,3 +1,5 @@
+import { auth } from "@/api/auth";
+import { LOCAL_TOKEN_KEY } from "@/api/axios";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -25,7 +27,13 @@ function Signup() {
       email: id,
       password: pass,
     });
-    console.log(data);
+    if (error) {
+      console.log(error);
+      alert("Password was wrong");
+    } else {
+      const res = await auth(data.session?.access_token ?? "");
+      localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
+    }
   }
 
   return (
