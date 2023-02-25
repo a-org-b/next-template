@@ -27,6 +27,12 @@ const Update = () => {
       setValue("networth", e.data.payload.networth);
       setValue("youtube", e.data.payload.youtube);
       setValue("openToAquire", e.data.payload.openToAquire);
+      setValue("cto", e.data.payload.cto);
+      setValue("owner", e.data.payload.owner);
+      setValue("linkedIn", e.data.payload.linkedIn);
+      setValue("product", e.data.payload.product);
+      setValue("website", e.data.payload.website);
+
       set_my_company(e.data.payload);
     });
   }, []);
