@@ -1,4 +1,5 @@
-import React from "react";
+import { GetCompanyPayload, get_my_company } from "@/api/get-company";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 type FormType = {
@@ -22,9 +23,18 @@ type FormType = {
 };
 
 const Register = () => {
-  const { register, handleSubmit } = useForm<FormType>();
+  const { register, handleSubmit, setValue } = useForm<FormType>();
   const onSubmit = (data: FormType) => {};
-
+  const [my_company, set_my_company] = useState<GetCompanyPayload>();
+  useEffect(() => {
+    get_my_company().then((e) => {
+      setValue("company", e.data.payload.name);
+      setValue("domain", e.data.payload.domain);
+      setValue("logo", e.data.payload.profileUrl);
+      setValue("profit", e.data.payload.currentYearProfit);
+      set_my_company(e.data.payload);
+    });
+  }, []);
   return (
     <>
       <div className="mx-auto w-2/5 my-5 bg-gray-900 px-8 py-5 rounded-lg mt-28">
