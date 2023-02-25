@@ -89,17 +89,17 @@ function Signup() {
               <p className={c}>Remember me</p>
             </div>
 
-            {/* <Link href={b ? "/signin" : "/signup"}> */}
-            <button
-              onClick={signup}
-              className={
-                " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
-                d
-              }
-            >
-              Create account
-            </button>
-            {/* </Link> */}
+            <Link href="/login">
+              <button
+                onClick={signup}
+                className={
+                  " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
+                  d
+                }
+              >
+                Create account
+              </button>
+            </Link>
             <p className={b + " mt-3 mb-3 text-xl"}>
               Sign up with social media
             </p>

@@ -1,13 +1,7 @@
-import {
-  GetCompaniesPayload,
-  GetCompaniesRes,
-  get_companies,
-} from "@/api/get-companies";
-import { useSession } from "@supabase/auth-helpers-react";
+import { GetCompaniesPayload, get_companies } from "@/api/get-companies";
 import { useEffect, useState } from "react";
 import Model from "./components/Model";
 
-// const [query, setQuery] = useState("");
 const Showcase = () => {
   const [companies, setCompanies] = useState<GetCompaniesPayload[]>([]);
   const [current_company_index, setccI] = useState(0);
@@ -18,7 +12,7 @@ const Showcase = () => {
     });
   }, []);
   return (
-    <div className="pt-32 ">
+    <div className="pt-32  ">
       {c && (
         <Model
           onClose={() => setc(false)}
@@ -29,7 +23,7 @@ const Showcase = () => {
         return (
           <div
             key={e.emailId}
-            className="text-white bg-gray-900  p-10 w-fit rounded-lg m-3"
+            className="text-white bg-gray-900 p-10 inline-flex flex-col rounded-lg m-3"
             onClick={() => {
               setccI(i);
               setc(true);
