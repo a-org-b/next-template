@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function Navbar() {
   const [loginStatus, setLoginStatus] = useState(false);
   return (
-    <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 fixed top-0 w-full">
+    <nav className="bg-white backdrop-blur-2xl border-b-2 border-gray-500 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 fixed top-0 w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="#" className="flex items-center">
           <img

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 type FormType = {
   company: string;
-  logo: FileList;
+  logo: string;
   owner: string;
   ceo: string;
   cto: string;
@@ -16,8 +16,8 @@ type FormType = {
   linkedin: string;
   website: string;
   youtube: string;
-  certificate: FileList;
-  license: FileList;
+  certificate: string;
+  license: string;
   profit: number;
 };
 
@@ -30,7 +30,7 @@ const Register = () => {
       <div className="mx-auto w-2/5 my-5 bg-gray-900 px-8 py-5 rounded-lg mt-28">
         <h1 className="text-3xl mb-8 font-semibold">Company Details</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="text-xl mb-2 w-full ">Company Name</p>
+          <p className="text-xl mb-2 w-full ">Company Name</p>
           <input
             className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
             required
@@ -40,10 +40,10 @@ const Register = () => {
           ></input>
           <p className="text-xl mb-2 ">Logo</p>
           <input
-            className="bg-slate-700 placeholder:text-zinc-600 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
+            className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
             required
-            type="file"
-            accept="image/png, image/jpg, image/jpeg"
+            type="text"
+            placeholder="Copy & paste the link here..."
             {...register("logo")}
           ></input>
           <p className="text-xl mb-2 w-full ">Owner of Company</p>
@@ -146,18 +146,18 @@ const Register = () => {
           ></input>
           <p className="text-xl mb-2 ">Permit & Certificate</p>
           <input
-            className="bg-slate-700 placeholder:text-zinc-600 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
+            className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
             required
-            type="file"
-            accept="image/png, image/jpg, image/jpeg, .pdf"
+            type="text"
+            placeholder="Copy & paste the link here..."
             {...register("certificate")}
           ></input>
           <p className="text-xl mb-2 ">Business License</p>
           <input
-            className="bg-slate-700 placeholder:text-zinc-600 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
+            className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
             required
-            type="file"
-            accept="image/png, image/jpg, image/jpeg, .pdf"
+            type="text"
+            placeholder="Copy & paste the link here..."
             {...register("license")}
           ></input>
           <p className="text-xl mb-2 ">Current Year Profit</p>
@@ -169,11 +169,11 @@ const Register = () => {
             {...register("profit")}
           ></input>
           <button
-              type="button"
-              className="text-white w-44 ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Submit
-            </button>
+            type="button"
+            className="text-white w-44 ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </>
