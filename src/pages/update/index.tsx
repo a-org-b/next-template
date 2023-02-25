@@ -192,8 +192,18 @@ const Update = () => {
               {...register("currentYearProfit")}
             ></input>
           </div>
+          <div className="w-96 inline-block mx-10">
+            <p className="text-xl mb-2 ">Current Year Profit</p>
+            <input
+              required
+              type="checkbox"
+              placeholder="Enter Price"
+              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
+              {...register("openToAquire")}
+            ></input>
+          </div>
           <button
-            type="button"
+            type="submit"
             className="text-white w-44 block ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Submit
