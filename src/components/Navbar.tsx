@@ -1,6 +1,8 @@
 import { LOCAL_TOKEN_KEY } from "@/api/axios";
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 function Navbar() {
   const [loginStatus, setLoginStatus] = useState(false);
