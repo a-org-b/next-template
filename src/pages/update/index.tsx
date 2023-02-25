@@ -210,6 +210,16 @@ const Update = () => {
             ></input>
           </div>
           <div className="w-96 inline-block mx-10">
+            <p className="text-xl mb-2 ">Aquire Price</p>
+            <input
+              required
+              type="number"
+              placeholder="Enter Price"
+              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
+              {...register("price")}
+            ></input>
+          </div>
+          <div className="w-96 inline-block mx-10">
             <span className="text-xl mb-2 ">Open for Acquire</span>
             <input
               required
