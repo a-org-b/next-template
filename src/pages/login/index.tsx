@@ -12,7 +12,7 @@ function Login() {
   const [tof, settof] = useState(true);
 
   const [bool, setbool] = useState(true);
-  const [a, seta] = useState(` url(/image/dark.jpg) `);
+  // const [a, seta] = useState(` url(/image/dark.jpg) `);
   const [b, setb] = useState(" text-white ");
   const [c, setc] = useState(" text-gray-300 ");
   const [d, setd] = useState(" bg-yellow-500 ");
@@ -43,7 +43,7 @@ function Login() {
   return (
     <div
       className={"w-screen h-screen bg-no-repeat bg-cover "}
-      style={{ backgroundImage: a }}
+      // style={{ backgroundImage: a }}
     >
       <div className="flex h-screen justify-center items-center">
         <div className="text-center ">
