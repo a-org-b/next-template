@@ -1,7 +1,6 @@
-import { ApiResponse, axios_instance } from "./axios"
+import { axios_instance } from "./axios";
 
-export type GetCompanyPayload = {
-    "emailId": string,
+export type UpdateCompanyBody = {
     profileUrl: string;
     name: string;
     price: number;
@@ -22,7 +21,6 @@ export type GetCompanyPayload = {
     liveUserLink: string;
 }
 
-type GetCompaniesRes = ApiResponse<GetCompanyPayload>
-export const get_my_company = () => {
-    return axios_instance.get<GetCompaniesRes>("get-my-company")
+export const update_company = (body: UpdateCompanyBody) => {
+    return axios_instance.patch("update", body)
 }

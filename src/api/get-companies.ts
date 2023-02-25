@@ -4,7 +4,7 @@ export type GetCompaniesPayload = {
     "emailId": string,
     "name": string,
     "price": number,
-    "openToHire": boolean,
+    "openToAquire": boolean,
     "product": string,
     "domain": string,
     "currentYearProfit": number,

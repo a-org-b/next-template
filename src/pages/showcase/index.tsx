@@ -5,7 +5,6 @@ import {
 } from "@/api/get-companies";
 import { useSession } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
-import Card from "./components/Card";
 import Model from "./components/Model";
 
 // const [query, setQuery] = useState("");
