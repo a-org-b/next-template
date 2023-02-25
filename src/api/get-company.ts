@@ -20,6 +20,8 @@ export type GetCompanyPayload = {
     youtube: string;
     businessLicenseLink: string;
     liveUserLink: string;
+    activeUsers: number;
+
 }
 
 type GetCompaniesRes = ApiResponse<GetCompanyPayload>

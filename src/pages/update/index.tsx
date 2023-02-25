@@ -32,6 +32,7 @@ const Update = () => {
       setValue("linkedIn", e.data.payload.linkedIn);
       setValue("product", e.data.payload.product);
       setValue("website", e.data.payload.website);
+      setValue("activeUsers", e.data.payload.activeUsers);
 
       set_my_company(e.data.payload);
     });
@@ -114,7 +115,7 @@ const Update = () => {
               {...register("address")}
             ></textarea>
           </div>
-          
+
           <div className="w-96 inline-block mx-10">
             <p className="text-xl mb-2">Description</p>
             <textarea
@@ -205,7 +206,7 @@ const Update = () => {
               type="number"
               placeholder="Enter Price"
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
-              // {...register("activeUsers")}
+              {...register("activeUsers")}
             ></input>
           </div>
           <div className="w-96 inline-block mx-10">

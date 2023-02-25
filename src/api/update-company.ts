@@ -19,6 +19,7 @@ export type UpdateCompanyBody = {
     youtube: string;
     businessLicenseLink: string;
     liveUserLink: string;
+    activeUsers: number;
 }
 
 export const update_company = (body: UpdateCompanyBody) => {
