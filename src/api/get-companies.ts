@@ -1,11 +1,17 @@
 import { ApiResponse, axios_instance } from "./axios"
 
-type getCompaniesResponse = {
+export type GetCompaniesPayload = {
     "emailId": string,
     "name": string,
     "price": number,
-    "openToHire": boolean
+    "openToHire": boolean,
+    "product": string,
+    "domain": string,
+    "currentYearProfit": number,
+    "profileUrl": string
 }
-export const getCompanies = (sort_by: "price" | "users") => {
-    return axios_instance.get<ApiResponse<getCompaniesResponse>>("get-companies" + "/sortBy=" + sort_by)
+
+export type GetCompaniesRes = ApiResponse<GetCompaniesPayload[]>
+export const get_companies = (sort_by: "price" | "users") => {
+    return axios_instance.get<GetCompaniesRes>("get-companies" + "?sortBy=" + sort_by + "&startOffSet=0")
 }
