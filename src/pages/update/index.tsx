@@ -38,9 +38,9 @@ const Update = () => {
   }, []);
   return (
     <>
-      <div className="w-9/12 mx-auto bg-gray-900 px-8 py-5 rounded-lg mt-28 flex flex-row flex-wrap justify-center">
+      <div className="w-9/12 mx-auto bg-gray-900 px-20 py-5 rounded-lg mt-28 mb-20 flex flex-row flex-wrap justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
-          <h1 className="text-3xl text-center mb-8 font-semibold">
+          <h1 className="text-3xl text-center mb-8 mt-5 font-semibold">
             Company Details
           </h1>
           <div className="w-96 inline-block mx-10">
@@ -93,17 +93,6 @@ const Update = () => {
               {...register("cto")}
             ></input>
           </div>
-          <div className="mx-10">
-            <p className="text-xl mb-2 ">Address</p>
-            <textarea
-              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
-              required
-              cols={30}
-              rows={5}
-              placeholder="Enter address of company"
-              {...register("address")}
-            ></textarea>
-          </div>
           <div className="w-96 inline-block mx-10">
             <p className="text-xl mb-2 w-full ">Domain</p>
             <input
@@ -114,7 +103,19 @@ const Update = () => {
               {...register("domain")}
             ></input>
           </div>
-          <div className="mx-10">
+          <div className="w-96 inline-block mx-10">
+            <p className="text-xl mb-2 ">Address</p>
+            <textarea
+              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
+              required
+              cols={30}
+              rows={5}
+              placeholder="Enter address of company"
+              {...register("address")}
+            ></textarea>
+          </div>
+          
+          <div className="w-96 inline-block mx-10">
             <p className="text-xl mb-2">Description</p>
             <textarea
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
@@ -136,16 +137,15 @@ const Update = () => {
               {...register("networth")}
             ></input>
           </div>
-          <div className="mx-10">
+          <div className="w-96 inline-block mx-10">
             <p className="text-xl mb-2">Type of Product</p>
-            <textarea
+            <input
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
               required
-              cols={30}
-              rows={5}
-              placeholder="Enter type of products"
+              type="text"
+              placeholder="Enter type of product"
               {...register("product")}
-            ></textarea>
+            ></input>
           </div>
           <div className="w-96 inline-block mx-10">
             <p className="text-xl mb-2 w-full ">LinkedIn Page</p>
@@ -199,18 +199,27 @@ const Update = () => {
             ></input>
           </div>
           <div className="w-96 inline-block mx-10">
-            <p className="text-xl mb-2 ">Current Year Profit</p>
+            <p className="text-xl mb-2 ">Active Users</p>
+            <input
+              required
+              type="number"
+              placeholder="Enter Price"
+              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
+              // {...register("activeUsers")}
+            ></input>
+          </div>
+          <div className="w-96 inline-block mx-10">
+            <span className="text-xl mb-2 ">Open for Acquire</span>
             <input
               required
               type="checkbox"
-              placeholder="Enter Price"
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
               {...register("openToAquire")}
             ></input>
           </div>
           <button
             type="submit"
-            className="text-white w-44 block ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white w-96 block mx-auto mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Submit
           </button>
