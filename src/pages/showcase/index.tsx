@@ -35,10 +35,10 @@ const Showcase = () => {
       {c && (
         <Model
           onClose={() => setc(false)}
-          company={companies[current_company_index]}
+          company={companies?.[current_company_index]}
         ></Model>
       )}
-      {companies.map((e, i) => {
+      {companies?.map((e, i) => {
         return (
           <div
             key={e.emailId}
