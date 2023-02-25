@@ -1,6 +1,11 @@
 import { GetCompaniesPayload } from "@/api/get-companies";
+import { isPropertySignature } from "typescript";
 
-const Model = (prop: { company: GetCompaniesPayload }) => {
+type Props = {
+  company: GetCompaniesPayload;
+  onClose: () => void;
+};
+const Model = (prop: Props) => {
   const p = prop.company;
   return (
     <div className="h-full w-full ">
@@ -82,9 +87,10 @@ const Model = (prop: { company: GetCompaniesPayload }) => {
         </p>
         <button
           type="button"
+          onClick={prop.onClose}
           className="text-white w-44 ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          // {/* {p.} */}
+          Close
         </button>
       </div>
     </div>
