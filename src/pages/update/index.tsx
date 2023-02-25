@@ -11,6 +11,7 @@ const Update = () => {
       networth: +data.networth,
       price: +data.price,
       currentYearProfit: +data.currentYearProfit,
+      activeUsers: +data.activeUsers,
     });
   };
   const [my_company, set_my_company] = useState<GetCompanyPayload>();
