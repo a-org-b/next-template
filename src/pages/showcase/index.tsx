@@ -50,7 +50,7 @@ const Showcase = () => {
               setc(true);
             }}
           >
-            <Image src={e.profileUrl} alt="here is img"></Image>
+            <img src={e.profileUrl} alt="here is img"></img>
             <p className="cursor-pointer">NAME: {e.name}</p>
             <p>Domain: {e.domain}</p>
             <p>Product: {e.product}</p>
