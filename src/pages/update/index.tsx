@@ -218,6 +218,16 @@ const Update = () => {
               {...register("openToAquire")}
             ></input>
           </div>
+          <div className="w-96 inline-block mx-10">
+            <p className="text-xl mb-2 ">Aquire Price</p>
+            <input
+              required
+              type="number"
+              placeholder="Enter Price"
+              className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
+              {...register("price")}
+            ></input>
+          </div>
           <button
             type="submit"
             className="text-white w-96 block mx-auto mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
