@@ -41,11 +41,11 @@ const Update = () => {
     <>
       <div className="w-9/12 mx-auto bg-gray-900 px-20 py-5 rounded-lg mt-28 mb-20 flex flex-row flex-wrap justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="mx-auto">
-          <h1 className="text-3xl text-center mb-8 mt-5 font-semibold">
+          <h1 className="text-3xl text-center mb-8 mt-5 font-semibold border-b-2 border-white pb-7">
             Company Details
           </h1>
           <div className="w-96 inline-block mx-10">
-            <p className="text-xl mb-2 w-full ">Company Name</p>
+            <p className="text-xl mb-2 w-full">Company Name</p>
             <input
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
               required
