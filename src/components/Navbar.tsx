@@ -54,7 +54,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="/showcase"
                 className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 "
               >
                 Company Showcase

@@ -1,3 +1,4 @@
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import React, { useState } from "react";
 // import { createClient } from '@supabase/supabase-js'
@@ -11,9 +12,21 @@ function Signup() {
   const t = "false";
 
   const [id, setid] = useState("");
-  const [userid, setUserId] = useState("");
   const [pass, setpass] = useState("");
   const [cpass, setcpass] = useState("");
+
+  const supabase = createBrowserSupabaseClient({
+    supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_KEY,
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  });
+
+  async function signup() {
+    const { data, error } = await supabase.auth.signUp({
+      email: id,
+      password: pass,
+    });
+    console.log(data);
+  }
 
   return (
     <div
@@ -39,15 +52,7 @@ function Signup() {
               name="id"
               onChange={(e) => setid(e.target.value)}
             ></input>
-            <input
-              type="text"
-              placeholder="Create User Id"
-              className="w-full rounded-lg h-10 text-xl pl-6 mb-4 text-white bg-sky-900"
-              value={userid}
-              name="userId"
-              onChange={(e) => setUserId(e.target.value)}
-            ></input>
-            {/* value={li} name="li" onChange={catchInput} */}
+
             <br />
             <input
               type="Password"
@@ -77,16 +82,17 @@ function Signup() {
               <p className={c}>Remember me</p>
             </div>
 
-            <Link href={b ? "/signin" : "/signup"}>
-              <button
-                className={
-                  " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
-                  d
-                }
-              >
-                Create account
-              </button>
-            </Link>
+            {/* <Link href={b ? "/signin" : "/signup"}> */}
+            <button
+              onClick={signup}
+              className={
+                " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
+                d
+              }
+            >
+              Create account
+            </button>
+            {/* </Link> */}
             <p className={b + " mt-3 mb-3 text-xl"}>
               Sign up with social media
             </p>

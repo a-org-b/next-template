@@ -1,4 +1,6 @@
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 // import { createClient } from "@supabase/supabase-js";
@@ -13,6 +15,23 @@ function Login() {
   const [c, setc] = useState(" text-gray-300 ");
   const [d, setd] = useState(" bg-yellow-500 ");
   const [e, sete] = useState(" text-yellow-400 ");
+  const router = useRouter();
+  const supabase = createBrowserSupabaseClient({
+    supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_KEY,
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  });
+
+  async function signin() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: lid,
+      password: lpass,
+    });
+    console.log(error);
+    if (error != null) {
+      router.push("/login");
+      alert("Password was wrong");
+    }
+  }
 
   return (
     <div
@@ -57,13 +76,13 @@ function Login() {
               <p className={e + " absolute right-0"}>Forgot Password</p>
             </div>
 
-            <Link href={tof ? "/signin" : "/register"}>
+            <Link href={tof ? "/showcase" : "/login"}>
               <button
+                onClick={signin}
                 className={
                   " text-blue-900 font-semibold w-full mt-4 rounded-lg h-10 text-xl text-center" +
                   d
                 }
-                // onClick={() => post(lid, lpass)}
               >
                 Login
               </button>
