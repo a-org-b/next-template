@@ -6,9 +6,12 @@ import { useForm } from "react-hook-form";
 const Update = () => {
   const { register, handleSubmit, setValue } = useForm<UpdateCompanyBody>();
   const onSubmit = (data: UpdateCompanyBody) => {
-    console.log(data.networth);
-
-    update_company({ ...data, networth: +data.networth, price: +data.price });
+    update_company({
+      ...data,
+      networth: +data.networth,
+      price: +data.price,
+      currentYearProfit: +data.currentYearProfit,
+    });
   };
   const [my_company, set_my_company] = useState<GetCompanyPayload>();
   useEffect(() => {
