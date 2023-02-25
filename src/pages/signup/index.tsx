@@ -31,8 +31,7 @@ function Signup() {
       console.log(error);
       alert("Password was wrong");
     } else {
-      const res = await auth(data.session?.access_token ?? "");
-      localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
+
     }
   }
 
