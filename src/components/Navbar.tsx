@@ -53,11 +53,11 @@ function Navbar() {
           <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
-                href="/register"
+                href="/update"
                 className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 "
                 aria-current="page"
               >
-                Register
+                Update
               </a>
             </li>
             <li>
