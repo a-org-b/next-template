@@ -1,4 +1,7 @@
-const Model = () => {
+import { GetCompaniesPayload } from "@/api/get-companies";
+
+const Model = (prop: { company: GetCompaniesPayload }) => {
+  const p = prop.company;
   return (
     <div className="h-full w-full ">
       <div className="mx-auto w-2/5 my-5 bg-gray-900 px-8 py-5 rounded-lg mt-28">
@@ -13,14 +16,14 @@ const Model = () => {
           className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
           placeholder="Enter company name"
         >
-          AllSafe
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 w-full ">Owner of Company</p>
         <p
           className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
           placeholder="Enter Name"
         >
-          abc
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 w-full ">CEO of Company</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
@@ -28,59 +31,60 @@ const Model = () => {
         </p>
         <p className="text-xl mb-2 w-full ">CTO of Company</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          cto
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Address</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          address
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 w-full ">Domain</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          Domain
+          {p.domain}
         </p>
         <p className="text-xl mb-2">Description</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          Discription
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Start Date</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          Start DATE
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Networth</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          NETWORTH
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2">Type of Product</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          Type
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 w-full ">LinkedIn Page</p>
-        Linkdin link
+        {/* {p.} */}
+
         <p className="text-xl mb-2 w-full ">Website Link</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          website link
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 w-full ">Youtube Link</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          yt link
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Permit & Certificate</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          certificate link
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Business License</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          Licence
+          {/* {p.} */}
         </p>
         <p className="text-xl mb-2 ">Current Year Profit</p>
         <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-          current yer profit
+          {p.currentYearProfit}
         </p>
         <button
           type="button"
           className="text-white w-44 ml-40 mt-5 mb-11 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          Close
+          // {/* {p.} */}
         </button>
       </div>
     </div>

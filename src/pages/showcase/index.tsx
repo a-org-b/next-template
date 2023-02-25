@@ -16,6 +16,7 @@ const Showcase = () => {
   }, []);
   return (
     <>
+      <Model company={companies[current_company_index]}></Model>
       {companies.map((e, i) => {
         return (
           <div
