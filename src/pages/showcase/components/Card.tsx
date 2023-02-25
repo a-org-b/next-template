@@ -6,7 +6,7 @@ const Card = () => {
       <p>Domain: {"Cyber-security"}</p>
       <p>Product: {"software"}</p>
       <p>Current year proffit:{"100"}</p>
-      <button></button>
+      <button>See More</button>
     </div>
   );
 };
