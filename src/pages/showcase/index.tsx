@@ -1,4 +1,5 @@
 import { GetCompaniesPayload, get_companies } from "@/api/get-companies";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Model from "./components/Model";
 
@@ -14,9 +15,10 @@ const Showcase = () => {
   }, []);
   return (
     <div className="pt-32">
-      <div>
+      <div className="ml-32">
         <label htmlFor="sortBy"></label>
         <select
+          className="p-3 rounded-lg"
           name="sortBy"
           id="sortBy"
           defaultValue={"price"}
@@ -48,7 +50,7 @@ const Showcase = () => {
               setc(true);
             }}
           >
-            <img src={e.profileUrl} alt="here is img"></img>
+            <Image src={e.profileUrl} alt="here is img"></Image>
             <p className="cursor-pointer">NAME: {e.name}</p>
             <p>Domain: {e.domain}</p>
             <p>Product: {e.product}</p>

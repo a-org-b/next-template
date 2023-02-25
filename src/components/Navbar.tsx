@@ -1,7 +1,6 @@
 import { LOCAL_TOKEN_KEY } from "@/api/axios";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function Navbar() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -14,14 +13,16 @@ function Navbar() {
     <nav className="bg-white backdrop-blur-2xl border-b-2 border-gray-500 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 fixed top-0 w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
         <a href="#" className="flex items-center">
-          <img
+          <Image
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-6 mr-3 sm:h-9"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Acquire
-          </span>
+          <Link href="/showcase">
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              Acquire
+            </span>
+          </Link>
         </a>
 
         <div className="flex md:order-2">
@@ -35,7 +36,7 @@ function Navbar() {
                 router.push("/login");
               }}
             >
-              Log Out
+              LogOut
             </button>
           ) : (
             <button

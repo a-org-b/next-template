@@ -92,18 +92,6 @@ function Login() {
             >
               Login
             </button>
-            {/* <div className="flex justify-center mt-5 ">
-              <img
-                src="/image/google.png"
-                alt="google"
-                className="w-10 rounded-full mx-2"
-              ></img>
-              <img
-                src="/image/facebook.png"
-                alt="fb"
-                className="w-10 rounded-full  mx-2"
-              ></img>
-            </div> */}
 
             <div className="flex mb-12 mt-3 ">
               <p className={b}>Don't have an account?</p>
