@@ -1,3 +1,5 @@
+import { auth } from "@/api/auth";
+import { LOCAL_TOKEN_KEY } from "@/api/axios";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -26,7 +28,10 @@ function Login() {
       email: lid,
       password: lpass,
     });
-    console.log(error);
+
+    const res = await auth(data.session?.access_token ?? "");
+    localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
+    if (error) console.log(error);
     if (error != null) {
       router.push("/login");
       alert("Password was wrong");
