@@ -34,9 +34,9 @@ function Login() {
       router.push("/login");
       alert("Password was wrong");
     } else {
-      router.push("/showcase");
       const res = await auth(data.session?.access_token ?? "");
       localStorage.setItem(LOCAL_TOKEN_KEY, res.data.payload.token);
+      router.push("/showcase");
     }
   }
 

@@ -1,8 +1,15 @@
+import { LOCAL_TOKEN_KEY } from "@/api/axios";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 
 function Navbar() {
   const [loginStatus, setLoginStatus] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    const local_token = localStorage.getItem(LOCAL_TOKEN_KEY);
+    if (local_token) setLoginStatus(true);
+  }, []);
   return (
     <nav className="bg-white backdrop-blur-2xl border-b-2 border-gray-500 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 fixed top-0 w-full">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
@@ -22,8 +29,13 @@ function Navbar() {
             <button
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              onClick={() => {
+                localStorage.removeItem(LOCAL_TOKEN_KEY);
+                setLoginStatus(false);
+                router.push("/login");
+              }}
             >
-              LogOut
+              Log Out
             </button>
           ) : (
             <button
