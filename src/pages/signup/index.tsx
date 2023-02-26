@@ -2,6 +2,7 @@ import { auth } from "@/api/auth";
 import { LOCAL_TOKEN_KEY } from "@/api/axios";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 // import { createClient } from '@supabase/supabase-js'
 
@@ -12,6 +13,7 @@ function Signup() {
   const [c, setc] = useState(" text-gray-300 ");
   const [d, setd] = useState(" bg-yellow-500 ");
   const t = "false";
+  const router = useRouter();
 
   const [id, setid] = useState("");
   const [pass, setpass] = useState("");
@@ -29,9 +31,8 @@ function Signup() {
     });
     if (error) {
       console.log(error);
-      alert("Password was wrong");
     } else {
-
+      router.push("/login");
     }
   }
 
