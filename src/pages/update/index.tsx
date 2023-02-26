@@ -34,6 +34,7 @@ const Update = () => {
       setValue("product", e.data.payload.product);
       setValue("website", e.data.payload.website);
       setValue("activeUsers", e.data.payload.activeUsers);
+      setValue("price", e.data.payload.price);
 
       set_my_company(e.data.payload);
     });
@@ -213,7 +214,6 @@ const Update = () => {
           <div className="w-96 inline-block mx-10">
             <span className="text-xl mb-2 ">Open for Acquire</span>
             <input
-              required
               type="checkbox"
               className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-96 outline-none focus:outline-1"
               {...register("openToAquire")}
