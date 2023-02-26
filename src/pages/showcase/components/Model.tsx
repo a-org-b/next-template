@@ -30,7 +30,7 @@ const Model = (prop: Props) => {
             className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1"
             placeholder="Enter Name"
           >
-            {p.name}
+            {p.owner}
           </p>
           <p className="text-xl mb-2 w-full ">CEO of Company</p>
           <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
@@ -62,7 +62,9 @@ const Model = (prop: Props) => {
             {p.product}
           </p>
           <p className="text-xl mb-2 w-full ">LinkedIn Page</p>
-          {p.linkedIn}
+          <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
+            {p.linkedIn}
+          </p>
 
           <p className="text-xl mb-2 w-full ">Website Link</p>
           <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
@@ -73,10 +75,18 @@ const Model = (prop: Props) => {
             {p.youtube}
           </p>
 
-          <p className="text-xl mb-2 ">Business License</p>
+          <p className="text-xl mb-2">Business License</p>
+          <div className="bg-slate-700 overflow-x-scroll">
+            <p className=" placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
+              {p.businessLicenseLink}
+            </p>
+          </div>
+
+          <p className="text-xl mb-2 ">Email contact</p>
           <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
-            {p.businessLicenseLink}
+            {p.emailId}
           </p>
+
           <p className="text-xl mb-2 ">Current Year Profit</p>
           <p className="bg-slate-700 placeholder:text-zinc-400 shadow-lg rounded-md px-5 py-2 text-lg mb-10 w-full outline-none focus:outline-1">
             {p.currentYearProfit}
